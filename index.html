@@ -223,7 +223,45 @@ Markdown으로 작성해줘.
               <a href="source-md/02_stitch_make_product_ui_prompt.md">원본 md 열기</a>
               <button type="button" class="copy-button" data-copy-target="prompt-02">Copy</button>
             </div>
-            <textarea id="prompt-02" class="prompt-box" readonly>위</textarea>
+            <textarea id="prompt-02" class="prompt-box" readonly>위에 붙인 Semantic Rebuild Brief를 바탕으로 이 제품의 새로운 프론트엔드 콘셉트를 만들어줘.
+
+언어 규칙:
+- 모든 화면 문구, 메뉴, 버튼, 라벨, 안내문, 상태 메시지, 예시 데이터, 설명은 한국어로 작성해.
+- 필요한 고유명사와 도구명은 영어를 유지해도 돼: Codex, Stitch, DESIGN.md, GitHub Pages, zip, Copy.
+- 최종 사용자는 한국어로 이 가이드를 따라가는 사람이라고 가정해.
+
+중요 규칙:
+기존 Codex UI는 시각 참조가 아니다. 기존 UI의 레이아웃, 색상, 타이포그래피, 컴포넌트 구조, 여백, 섹션 순서, 정보 위계, 장식 스타일을 보존하거나 개선하거나 따라 하지 마.
+
+기존 UI에서 사용할 수 있는 것은 오직 제품 의미뿐이야:
+- 제품 목적
+- 기능 목록
+- 사용자 흐름
+- 화면 의도
+- 데이터 상태
+- 누락 상태
+- 피해야 할 anti-pattern
+
+목표:
+제품 의미와 사용자 흐름에 맞는 새로운 UI 콘셉트를 만들어줘.
+
+이번 첫 시안에서는 최종 시각 스타일보다 제품 구조와 UX 명확성을 우선해.
+
+생성할 것:
+1. 강한 메인 화면 콘셉트
+2. 필요하면 핵심 보조 화면
+3. 모바일/데스크톱 방향
+4. 현실적인 한국어 예시 콘텐츠
+5. 필요한 loading / empty / error / success 상태
+6. 중요한 가정 목록
+
+피할 것:
+- Brief가 명확히 요구하지 않는 generic landing page
+- 사용자 작업에 도움이 안 되는 장식 섹션
+- 기존 Codex UI의 시각적 흔적
+- Brief에 없는 가짜 기능
+
+여러 방향이 유용하면 2-3개 시안을 만들고, 각 시안의 차이를 한국어로 설명해줘.</textarea>
           </details>
 
           <details class="prompt-card">
@@ -290,7 +328,46 @@ Markdown으로 작성해줘.
               <a href="source-md/04_stitch_apply_design_md_to_ui_prompt.md">원본 md 열기</a>
               <button type="button" class="copy-button" data-copy-target="prompt-04">Copy</button>
             </div>
-            <textarea id="prompt-04" class="prompt-box" readonly>선</textarea>
+            <textarea id="prompt-04" class="prompt-box" readonly>선택한 제품 UI를 선택한 DESIGN.md / design system 기준으로 재작업해줘.
+
+언어 규칙:
+- 모든 화면 문구, 메뉴, 버튼, 라벨, 안내문, 상태 메시지, 예시 데이터는 한국어로 작성해.
+- Codex, Stitch, DESIGN.md, GitHub Pages, zip, Copy 같은 도구명/고유명사는 영어를 유지해도 돼.
+
+중요:
+Semantic Rebuild Brief의 제품 목적, 기능, 사용자 흐름, 화면 의도, 핵심 액션은 유지해.
+
+단순히 색만 바꾸지 마.
+선택한 DESIGN.md가 전체 디자인 시스템으로 적용되도록 UI를 다시 구성해.
+
+적용할 것:
+- color token
+- 타이포그래피 규칙
+- 여백 리듬
+- 버튼 스타일
+- 카드 스타일
+- form/input 스타일
+- 필요하면 table / data-display 스타일
+- 내비게이션 스타일
+- radius, border, shadow, elevation 규칙
+- hover, focus, loading, empty, error, success 상태
+- 모바일/데스크톱 반응형 동작
+
+복사하지 말 것:
+- 기존 Codex UI의 레이아웃, 색상, 타이포그래피, 컴포넌트 구조, 여백, 섹션 순서, 시각 스타일
+- 레퍼런스 사이트의 정확한 레이아웃, 브랜드, 로고, 문구, 콘텐츠, 고유한 정체성
+
+사용 기준:
+- 제품 의미는 Semantic Rebuild Brief를 따른다.
+- 시각 시스템은 선택한 DESIGN.md를 따른다.
+- 선택한 제품 UI는 개선할 현재 작업 화면으로만 사용한다.
+
+출력:
+1. 재작업된 메인 화면
+2. 필요하면 핵심 보조 화면 수정안
+3. 관련 상태 화면
+4. 무엇이 바뀌었는지 짧은 요약
+5. 구현에 영향을 주는 가정</textarea>
           </details>
 
           <details class="prompt-card">
