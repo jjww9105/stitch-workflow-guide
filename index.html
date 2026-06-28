@@ -1,0 +1,576 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Stitch Reference Design Workflow</title>
+    <meta
+      name="description"
+      content="Codex 프로젝트 의미와 레퍼런스 디자인을 Google Stitch에서 결합하는 단계별 프롬프트 가이드"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <nav class="topbar" aria-label="Primary">
+        <a class="brand" href="#top" aria-label="Stitch workflow home">
+          <span class="brand-mark">S</span>
+          <span>Stitch Workflow</span>
+        </a>
+        <div class="nav-links">
+          <a href="#steps">Steps</a>
+          <a href="#prompts">Prompts</a>
+          <a href="#deploy">Deploy</a>
+          <a href="source-md/07_ONE_PAGE_CHEATSHEET.md">Cheatsheet</a>
+        </div>
+      </nav>
+
+      <section class="hero" id="top">
+        <div class="hero-copy">
+          <p class="eyebrow">Codex + Google Stitch + Reference Design</p>
+          <h1>제품 의미와 디자인 감성을 분리해서 Stitch에 넘기는 실전 워크플로우</h1>
+          <p class="lead">
+            Codex는 제품을 해석하고, Stitch는 새 UI를 만들고, 레퍼런스 이미지는
+            DESIGN.md/design system을 만드는 데만 사용한다.
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" href="#prompts">프롬프트 바로 쓰기</a>
+            <a class="button secondary" href="README_DEPLOY_GITHUB_PAGES.md">GitHub Pages 배포 안내</a>
+          </div>
+        </div>
+        <figure class="workflow-visual">
+          <img src="assets/workflow-map.svg" alt="Codex product meaning, Stitch product UI, reference design system, and final zip integration workflow" />
+          <figcaption>제품 의미 라인과 디자인 감성 라인을 Stitch에서 합친다.</figcaption>
+        </figure>
+      </section>
+    </header>
+
+    <main>
+      <section class="summary-band" aria-label="Core rule">
+        <div>
+          <strong>제일 중요한 규칙</strong>
+          <p>기존 Codex UI는 디자인 참고자료가 아니다. 제품 목적, 기능, 화면 의도, 데이터 상태만 추출한다.</p>
+        </div>
+        <div>
+          <strong>레퍼런스 이미지는?</strong>
+          <p>색감, 폰트 느낌, 여백감, 컴포넌트 분위기만 추출한다. 원본 레이아웃과 브랜드는 복사하지 않는다.</p>
+        </div>
+      </section>
+
+      <section class="section" id="steps">
+        <div class="section-heading">
+          <p class="eyebrow">Overview</p>
+          <h2>따라 할 순서</h2>
+          <p>다음에 기억이 흐릿하면 이 순서대로만 진행하면 된다.</p>
+        </div>
+
+        <ol class="step-list">
+          <li>
+            <span class="step-number">1</span>
+            <div>
+              <h3>제품 프로젝트를 Codex에서 연다</h3>
+              <p>새 프론트엔드를 만들 실제 프로젝트 폴더를 연다.</p>
+            </div>
+          </li>
+          <li>
+            <span class="step-number">2</span>
+            <div>
+              <h3>Codex가 Semantic Rebuild Brief를 만든다</h3>
+              <p>아래 01 프롬프트를 제품 프로젝트 Codex에 붙인다.</p>
+            </div>
+          </li>
+          <li>
+            <span class="step-number">3</span>
+            <div>
+              <h3>Stitch가 제품 UI 예시를 만든다</h3>
+              <p>Codex가 만든 Brief 전체와 02 프롬프트를 Stitch에 같이 붙인다.</p>
+            </div>
+          </li>
+          <li>
+            <span class="step-number">4</span>
+            <div>
+              <h3>레퍼런스 이미지로 DESIGN.md를 만든다</h3>
+              <p>Stitch에 캡처 이미지를 올리고, 이미지를 선택한 뒤 03 프롬프트를 붙인다.</p>
+            </div>
+          </li>
+          <li>
+            <span class="step-number">5</span>
+            <div>
+              <h3>제품 UI에 DESIGN.md를 적용한다</h3>
+              <p>제품 UI 예시와 DESIGN.md/design system을 선택하고 04 프롬프트를 붙인다.</p>
+            </div>
+          </li>
+          <li>
+            <span class="step-number">6</span>
+            <div>
+              <h3>품질 검사 후 zip을 Codex에 통합한다</h3>
+              <p>05로 검사하고, 다운로드한 zip은 06 프롬프트로 제품 프로젝트에 통합한다.</p>
+            </div>
+          </li>
+        </ol>
+      </section>
+
+      <section class="section" id="prompts">
+        <div class="section-heading">
+          <p class="eyebrow">Copy Blocks</p>
+          <h2>단계별 프롬프트</h2>
+          <p>각 항목을 펼친 뒤 Copy 버튼을 누르면 된다. 원본 md 파일도 같이 남겨두었다.</p>
+        </div>
+
+        <div class="prompt-stack">
+          <details class="prompt-card" open>
+            <summary>
+              <span class="badge codex">Codex</span>
+              <span>01. Semantic Rebuild Brief 만들기</span>
+            </summary>
+            <p class="prompt-note">실제 제품 프로젝트의 Codex에 붙여넣는다.</p>
+            <div class="copy-row">
+              <a href="source-md/01_codex_make_semantic_brief_prompt.md">원본 md 열기</a>
+              <button type="button" class="copy-button" data-copy-target="prompt-01">Copy</button>
+            </div>
+            <textarea id="prompt-01" class="prompt-box" readonly>이 프로젝트를 Google Stitch에서 새 프론트엔드로 만들 수 있게 Semantic Rebuild Brief를 작성해줘.
+
+중요:
+기존 Codex UI는 시각 참조가 아니다.
+기존 UI의 레이아웃, 색상, 폰트, 컴포넌트, 스타일, 여백, 장식, 정보 위계는 절대 보존하지 마.
+기존 UI에서는 제품 목적, 기능, 사용자 흐름, 화면 의도, 데이터 상태, 누락 상태, anti-pattern만 추출해.
+
+목표:
+Stitch가 기존 UI를 리디자인하는 것이 아니라, 제품 의미를 바탕으로 완전히 새 프론트엔드를 만들 수 있게 하는 것이다.
+
+작성할 내용:
+1. Product Snapshot
+   - 제품명
+   - 한 줄 목적
+   - 대상 사용자
+   - 사용자가 해결하려는 문제
+   - 제품이 반드시 도와야 하는 일
+
+2. Users And Jobs
+   - 사용자 유형
+   - 사용자가 처한 상황
+   - 해야 할 일
+   - 성공/실패 기준
+
+3. Core Workflows
+   - 주요 사용자 흐름
+   - 시작 지점
+   - 단계
+   - 성공 상태
+   - 에러/막힘 상태
+   - 복구 경로
+
+4. Screen Goal Cards
+   - 화면 이름
+   - 사용자 목표
+   - 제품 목표
+   - 핵심 콘텐츠
+   - 주요 액션
+   - 보조 액션
+   - 필요한 상태: loading / empty / error / success / permission
+
+5. Data And State Matrix
+   - 데이터 엔티티
+   - 필드
+   - 어디에 표시되는지
+   - 사용자가 할 수 있는 액션
+   - loading / empty / error / success / permission 상태
+
+6. Interaction Requirements
+   - 네비게이션
+   - CTA
+   - 폼/검증
+   - 검색/필터/정렬
+   - 모달/드로어
+   - 반응형 요구사항
+
+7. Anti-Patterns From Current UI
+   - 현재 UI에서 버려야 할 문제
+   - 왜 문제인지
+   - 새 UI에서는 어떻게 해결해야 하는지
+
+8. Unknowns And Assumptions
+   - 확실하지 않은 점
+   - 네가 추정한 점
+   - 사용자 확인이 필요한 점
+
+출력 형식:
+Markdown으로 작성해줘.
+제목은 `# Semantic Rebuild Brief`로 시작해줘.
+
+마지막에 Stitch에 처음 넣을 때 사용할 짧은 요약도 붙여줘.
+
+다시 강조:
+기존 Codex UI는 디자인 참고자료가 아니다.
+기존 UI는 제품 의미를 추출하는 자료일 뿐이다.</textarea>
+          </details>
+
+          <details class="prompt-card">
+            <summary>
+              <span class="badge stitch">Stitch</span>
+              <span>02. 제품 UI 예시 만들기</span>
+            </summary>
+            <p class="prompt-note">Stitch에 `Semantic Rebuild Brief 전체`를 붙인 다음, 아래 프롬프트를 이어서 붙인다.</p>
+            <div class="copy-row">
+              <a href="source-md/02_stitch_make_product_ui_prompt.md">원본 md 열기</a>
+              <button type="button" class="copy-button" data-copy-target="prompt-02">Copy</button>
+            </div>
+            <textarea id="prompt-02" class="prompt-box" readonly>Use the Semantic Rebuild Brief above to create a new frontend concept for this product.
+
+Critical rule:
+The existing Codex-generated UI is not a visual reference. Do not preserve, improve, redesign, imitate, or borrow its layout, colors, typography, component structure, spacing, section order, information hierarchy, or decorative style.
+
+Use the existing UI only as semantic evidence for:
+- product purpose
+- feature inventory
+- user flows
+- screen intent
+- data states
+- missing states
+- anti-patterns to avoid
+
+Goal:
+Create a new UI concept that fits the product meaning and user workflows.
+
+For this first pass, focus on product structure and UX clarity, not final visual styling.
+
+Generate:
+1. A strong main screen concept
+2. Key secondary screens if needed
+3. Mobile and desktop direction
+4. Realistic product content
+5. Loading, empty, error, and success states where relevant
+6. Notes on assumptions
+
+Avoid:
+- generic landing page sections unless the brief clearly asks for a landing page
+- decorative content that does not support the workflow
+- visual inheritance from the old Codex UI
+- fake features not supported by the brief
+
+If multiple directions are useful, generate 2-3 options and explain the difference between them.</textarea>
+          </details>
+
+          <details class="prompt-card">
+            <summary>
+              <span class="badge stitch">Stitch</span>
+              <span>03. 레퍼런스 이미지에서 DESIGN.md 만들기</span>
+            </summary>
+            <p class="prompt-note">레퍼런스 사이트 캡처 이미지를 Stitch에 올리고, 이미지를 선택한 뒤 붙인다.</p>
+            <div class="copy-row">
+              <a href="source-md/03_stitch_make_design_md_from_reference_prompt.md">원본 md 열기</a>
+              <button type="button" class="copy-button" data-copy-target="prompt-03">Copy</button>
+            </div>
+            <textarea id="prompt-03" class="prompt-box" readonly>Create a DESIGN.md / design system from the selected reference image.
+
+Important:
+This reference image is for extracting visual direction and design-system rules.
+Do not copy the original site's layout, section structure, brand name, logo, text, content, or proprietary identity.
+
+Extract and reinterpret:
+- color palette
+- semantic color tokens
+- typography style
+- heading, body, label, and data-text rules
+- spacing rhythm
+- radius, borders, shadows, and elevation
+- button style
+- card style
+- form/input style
+- table or data display style if relevant
+- navigation style
+- hover, focus, loading, empty, error, and success states
+- overall mood
+- do's and don'ts
+
+Design-system goal:
+Create a reusable DESIGN.md that can be applied to a different product UI.
+
+The target product type is:
+[여기에 제품 유형 입력: 예: 업무용 SaaS 대시보드 / 데이터 관리 툴 / 소비자 앱 / 랜딩페이지 / 에디터 / 커머스]
+
+Adapt the reference style to this product type.
+
+Do not make the design system too literal.
+Preserve the mood and quality bar, but make it usable for a new product.
+
+Output:
+1. DESIGN.md
+2. Short explanation of the extracted visual direction
+3. What was intentionally not copied from the reference image</textarea>
+          </details>
+
+          <details class="prompt-card">
+            <summary>
+              <span class="badge stitch">Stitch</span>
+              <span>04. 제품 UI에 DESIGN.md 적용하기</span>
+            </summary>
+            <p class="prompt-note">제품 UI 예시와 DESIGN.md/design system을 선택한 뒤 붙인다.</p>
+            <div class="copy-row">
+              <a href="source-md/04_stitch_apply_design_md_to_ui_prompt.md">원본 md 열기</a>
+              <button type="button" class="copy-button" data-copy-target="prompt-04">Copy</button>
+            </div>
+            <textarea id="prompt-04" class="prompt-box" readonly>Rework the selected product UI using the selected DESIGN.md / design system.
+
+Important:
+Preserve the product purpose, features, user workflow, screen intent, and core actions from the Semantic Rebuild Brief.
+
+Do not simply recolor the screen.
+Recompose the UI so the selected DESIGN.md is applied as a full design system.
+
+Apply:
+- color tokens
+- typography rules
+- spacing rhythm
+- button style
+- card style
+- form/input style
+- table or data-display style if relevant
+- navigation style
+- radius, border, shadow, and elevation rules
+- hover, focus, loading, empty, error, and success states
+- mobile and desktop responsive behavior
+
+Do not copy:
+- the old Codex UI's layout, colors, typography, component structure, spacing, section order, or visual style
+- the reference site's exact layout, brand, logo, text, content, or proprietary identity
+
+Use:
+- Semantic Rebuild Brief for product meaning
+- selected DESIGN.md for visual system
+- selected product UI only as the current working screen to improve
+
+Output:
+1. Revised main screen
+2. Key secondary screen updates if needed
+3. Relevant state variants
+4. Short summary of what changed
+5. Any assumptions that affect implementation</textarea>
+          </details>
+
+          <details class="prompt-card">
+            <summary>
+              <span class="badge stitch">Stitch</span>
+              <span>05. 품질 검사 프롬프트</span>
+            </summary>
+            <p class="prompt-note">아래 버튼들은 각각 별도 검사 프롬프트다. 필요한 검사만 복사해서 쓴다.</p>
+            <div class="copy-row">
+              <a href="source-md/05_stitch_quality_check_prompts.md">원본 md 열기</a>
+            </div>
+            <div class="subprompt-grid">
+              <article class="subprompt">
+                <h3>기존 Codex UI 오염 검사</h3>
+                <button type="button" class="copy-button" data-copy-target="prompt-05a">Copy</button>
+                <textarea id="prompt-05a" class="prompt-box compact" readonly>Review the selected design for accidental inheritance from the old Codex-generated UI.
+
+The old Codex UI must not influence:
+- layout
+- colors
+- typography
+- component structure
+- spacing
+- section order
+- information hierarchy
+- decorative style
+
+It may influence only:
+- product purpose
+- features
+- user flows
+- screen intent
+- data states
+- missing states
+- anti-patterns to avoid
+
+If you find visual inheritance from the old Codex UI, revise the design to remove it while preserving the product meaning and the selected DESIGN.md.
+
+Return:
+1. inherited visual choices found
+2. revisions made
+3. remaining assumptions</textarea>
+              </article>
+              <article class="subprompt">
+                <h3>레퍼런스 과복사 검사</h3>
+                <button type="button" class="copy-button" data-copy-target="prompt-05b">Copy</button>
+                <textarea id="prompt-05b" class="prompt-box compact" readonly>Review the selected design for excessive copying from the reference site.
+
+The reference image should influence:
+- mood
+- quality bar
+- color feel
+- typography feel
+- spacing rhythm
+- component atmosphere
+
+It should not copy:
+- exact layout
+- section structure
+- brand identity
+- logo
+- text/content
+- proprietary visual identity
+
+If the design copies the reference too literally, revise it so it becomes an original product UI that only borrows the design-system direction.
+
+Return:
+1. copied elements found
+2. revisions made
+3. what reference qualities were preserved</textarea>
+              </article>
+              <article class="subprompt">
+                <h3>상태 보강</h3>
+                <button type="button" class="copy-button" data-copy-target="prompt-05c">Copy</button>
+                <textarea id="prompt-05c" class="prompt-box compact" readonly>Audit the selected design for missing product states.
+
+Add or revise:
+- loading state
+- empty state
+- error state
+- validation state
+- success/confirmation state
+- permission or locked state if relevant
+
+Every state should help the user understand:
+- what happened
+- what they can do next
+- whether the system is still working
+
+Keep the design consistent with the selected DESIGN.md.
+
+Return:
+1. revised state designs
+2. missing states fixed
+3. assumptions</textarea>
+              </article>
+              <article class="subprompt">
+                <h3>DESIGN.md 준수 검사</h3>
+                <button type="button" class="copy-button" data-copy-target="prompt-05d">Copy</button>
+                <textarea id="prompt-05d" class="prompt-box compact" readonly>Audit the selected UI against the selected DESIGN.md / design system.
+
+Check:
+- color tokens
+- typography
+- spacing
+- radius
+- borders
+- shadows/elevation
+- buttons
+- cards
+- forms
+- tables/data displays
+- navigation
+- hover/focus states
+- loading/empty/error/success states
+
+Revise any part that conflicts with DESIGN.md.
+
+Return:
+1. revisions made
+2. DESIGN.md rules applied
+3. DESIGN.md rules that were ambiguous or missing</textarea>
+              </article>
+              <article class="subprompt">
+                <h3>모바일/데스크톱 검사</h3>
+                <button type="button" class="copy-button" data-copy-target="prompt-05e">Copy</button>
+                <textarea id="prompt-05e" class="prompt-box compact" readonly>Review the selected design for mobile and desktop usability.
+
+Check:
+- primary action visibility
+- readable text sizes
+- touch target size
+- navigation behavior
+- table/list behavior on small screens
+- form usability
+- scrolling behavior
+- no overlapping text or controls
+
+Revise the design so both mobile and desktop are usable.
+
+Return:
+1. mobile changes
+2. desktop changes
+3. remaining responsive assumptions</textarea>
+              </article>
+            </div>
+          </details>
+
+          <details class="prompt-card">
+            <summary>
+              <span class="badge codex">Codex</span>
+              <span>06. Stitch zip을 실제 프로젝트에 통합하기</span>
+            </summary>
+            <p class="prompt-note">Stitch에서 다운로드한 zip 경로와 함께 제품 프로젝트 Codex에 붙여넣는다.</p>
+            <div class="copy-row">
+              <a href="source-md/06_codex_integrate_stitch_zip_prompt.md">원본 md 열기</a>
+              <button type="button" class="copy-button" data-copy-target="prompt-06">Copy</button>
+            </div>
+            <textarea id="prompt-06" class="prompt-box" readonly>Stitch에서 다운로드한 zip을 현재 프로젝트의 새 프론트엔드 구현 재료로 사용해서 통합해줘.
+
+중요:
+Stitch zip을 그대로 덮어쓰지 마.
+현재 프로젝트의 실제 스택, 라우팅, 상태관리, 데이터 흐름, 빌드 설정을 먼저 확인해.
+
+해야 할 일:
+1. 현재 프로젝트 구조와 프론트엔드 스택을 확인해.
+2. Stitch zip 내부 구조를 확인해.
+3. 어떤 파일/컴포넌트/스타일을 가져올지 계획해.
+4. 기존 기능, 라우팅, API 연동, 상태관리, 인증, 데이터 처리를 보존해.
+5. Stitch 결과물의 디자인, 레이아웃, 컴포넌트 아이디어를 현재 프로젝트 구조에 맞게 통합해.
+6. 하드코딩된 더미 데이터가 있으면 실제 데이터 흐름에 맞게 바꿔.
+7. loading / empty / error / success 상태를 실제 코드에 반영해.
+8. 접근성, 반응형, 텍스트 overflow를 확인해.
+9. 빌드 또는 테스트를 실행해서 깨진 부분을 수정해.
+
+주의:
+- 기존 프로젝트 기능을 삭제하지 마.
+- 사용자 변경사항을 되돌리지 마.
+- Stitch 코드를 무비판적으로 복붙하지 마.
+- 기존 Codex UI의 낡은 시각 스타일로 되돌리지 마.
+- 레퍼런스 사이트의 브랜드/문구/로고를 복사하지 마.
+
+출력:
+1. 통합 계획
+2. 적용한 파일 목록
+3. 유지한 기존 기능
+4. 수정한 UI/컴포넌트
+5. 실행한 검증 명령
+6. 남은 리스크</textarea>
+          </details>
+        </div>
+      </section>
+
+      <section class="section" id="source">
+        <div class="section-heading">
+          <p class="eyebrow">Source Files</p>
+          <h2>원본 md 백업</h2>
+          <p>GitHub Pages에 올리면 이 링크들도 같이 접근할 수 있다.</p>
+        </div>
+        <div class="source-list">
+          <a href="source-md/00_START_HERE.md">00_START_HERE.md</a>
+          <a href="source-md/01_codex_make_semantic_brief_prompt.md">01_codex_make_semantic_brief_prompt.md</a>
+          <a href="source-md/02_stitch_make_product_ui_prompt.md">02_stitch_make_product_ui_prompt.md</a>
+          <a href="source-md/03_stitch_make_design_md_from_reference_prompt.md">03_stitch_make_design_md_from_reference_prompt.md</a>
+          <a href="source-md/04_stitch_apply_design_md_to_ui_prompt.md">04_stitch_apply_design_md_to_ui_prompt.md</a>
+          <a href="source-md/05_stitch_quality_check_prompts.md">05_stitch_quality_check_prompts.md</a>
+          <a href="source-md/06_codex_integrate_stitch_zip_prompt.md">06_codex_integrate_stitch_zip_prompt.md</a>
+          <a href="source-md/07_ONE_PAGE_CHEATSHEET.md">07_ONE_PAGE_CHEATSHEET.md</a>
+        </div>
+      </section>
+
+      <section class="deploy-band" id="deploy">
+        <div>
+          <p class="eyebrow">Publish</p>
+          <h2>GitHub Pages로 올리기</h2>
+          <p>
+            이 폴더 전체를 GitHub repository에 올리고, Settings -> Pages에서
+            `main` branch와 `/(root)`를 선택하면 된다.
+          </p>
+        </div>
+        <a class="button primary" href="README_DEPLOY_GITHUB_PAGES.md">자세한 배포 안내 보기</a>
+      </section>
+    </main>
+
+    <div class="toast" role="status" aria-live="polite" hidden>Copied</div>
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 520" role="img" aria-labelledby="title desc">
+  <title id="title">Stitch reference design workflow map</title>
+  <desc id="desc">Codex produces product meaning, Stitch creates product UI, a reference image creates DESIGN.md, and the final zip returns to Codex for integration.</desc>
+  <defs>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="12" stdDeviation="12" flood-color="#17212b" flood-opacity="0.16"/>
+    </filter>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#2563eb"/>
+    </marker>
+  </defs>
+  <rect width="760" height="520" rx="16" fill="#f7f4ee"/>
+  <path d="M80 120 C200 40, 330 58, 410 122 S610 178, 686 92" fill="none" stroke="#d1dce6" stroke-width="4"/>
+  <path d="M82 400 C210 290, 302 330, 382 398 S574 464, 680 340" fill="none" stroke="#ead2a9" stroke-width="4"/>
+
+  <g filter="url(#shadow)">
+    <rect x="56" y="72" width="220" height="122" rx="12" fill="#ffffff" stroke="#d7dce0"/>
+    <circle cx="92" cy="112" r="20" fill="#b45309"/>
+    <text x="124" y="104" font-family="Arial, sans-serif" font-size="16" font-weight="700" fill="#17212b">Codex Project</text>
+    <text x="124" y="130" font-family="Arial, sans-serif" font-size="13" fill="#5d6975">제품 목적, 기능, 흐름 추출</text>
+    <text x="124" y="154" font-family="Arial, sans-serif" font-size="13" fill="#5d6975">Semantic Rebuild Brief</text>
+  </g>
+
+  <g filter="url(#shadow)">
+    <rect x="484" y="72" width="220" height="122" rx="12" fill="#ffffff" stroke="#d7dce0"/>
+    <circle cx="520" cy="112" r="20" fill="#be3455"/>
+    <text x="552" y="104" font-family="Arial, sans-serif" font-size="16" font-weight="700" fill="#17212b">Stitch UI</text>
+    <text x="552" y="130" font-family="Arial, sans-serif" font-size="13" fill="#5d6975">제품 UI 예시 생성</text>
+    <text x="552" y="154" font-family="Arial, sans-serif" font-size="13" fill="#5d6975">구조와 화면 방향</text>
+  </g>
+
+  <g filter="url(#shadow)">
+    <rect x="56" y="310" width="220" height="122" rx="12" fill="#ffffff" stroke="#d7dce0"/>
+    <circle cx="92" cy="350" r="20" fill="#0f766e"/>
+    <text x="124" y="342" font-family="Arial, sans-serif" font-size="16" font-weight="700" fill="#17212b">Reference Image</text>
+    <text x="124" y="368" font-family="Arial, sans-serif" font-size="13" fill="#5d6975">색감, 폰트, 분위기 추출</text>
+    <text x="124" y="392" font-family="Arial, sans-serif" font-size="13" fill="#5d6975">DESIGN.md 생성</text>
+  </g>
+
+  <g filter="url(#shadow)">
+    <rect x="484" y="310" width="220" height="122" rx="12" fill="#ffffff" stroke="#d7dce0"/>
+    <circle cx="520" cy="350" r="20" fill="#2563eb"/>
+    <text x="552" y="342" font-family="Arial, sans-serif" font-size="16" font-weight="700" fill="#17212b">Final Zip</text>
+    <text x="552" y="368" font-family="Arial, sans-serif" font-size="13" fill="#5d6975">UI + DESIGN.md 적용</text>
+    <text x="552" y="392" font-family="Arial, sans-serif" font-size="13" fill="#5d6975">Codex가 실제 프로젝트 통합</text>
+  </g>
+
+  <path d="M280 133 H472" fill="none" stroke="#2563eb" stroke-width="4" marker-end="url(#arrow)"/>
+  <path d="M280 371 H472" fill="none" stroke="#2563eb" stroke-width="4" marker-end="url(#arrow)"/>
+  <path d="M594 198 V298" fill="none" stroke="#2563eb" stroke-width="4" marker-end="url(#arrow)"/>
+  <path d="M166 308 V204" fill="none" stroke="#0f766e" stroke-width="4" stroke-dasharray="8 9"/>
+
+  <rect x="306" y="222" width="148" height="76" rx="12" fill="#17212b"/>
+  <text x="380" y="252" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" font-weight="700" fill="#ffffff">Combine</text>
+  <text x="380" y="276" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#dce5ef">meaning + style</text>
+</svg>
