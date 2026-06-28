@@ -6,7 +6,7 @@
     <title>Stitch Reference Design Workflow</title>
     <meta
       name="description"
-      content="Codex 프로젝트 의미와 레퍼런스 디자인을 Google Stitch에서 결합하는 단계별 프롬프트 가이드"
+      content="Codex 프로젝트의 전체 화면 커버리지와 레퍼런스 디자인을 Google Stitch에서 결합하는 단계별 프롬프트 가이드"
     />
     <link rel="stylesheet" href="style.css" />
   </head>
@@ -27,11 +27,11 @@
 
       <section class="hero" id="top">
         <div class="hero-copy">
-          <p class="eyebrow">Codex + Google Stitch + Reference Design</p>
-          <h1>제품 의미와 디자인 감성을 분리해서 Stitch에 넘기는 실전 워크플로우</h1>
+          <p class="eyebrow">Codex + Google Stitch + Full Screen Coverage</p>
+          <h1>제품 의미, 전체 화면 커버리지, 디자인 감성을 분리해서 Stitch에 넘기는 실전 워크플로우</h1>
           <p class="lead">
-            Codex는 제품을 해석하고, Stitch는 새 UI를 만들고, 레퍼런스 이미지는
-            DESIGN.md/design system을 만드는 데만 사용한다.
+            Codex는 제품 의미와 전체 화면 인벤토리를 뽑고, Stitch는 전체 화면 세트를 만들고,
+            레퍼런스 이미지는 DESIGN.md/design system을 만드는 데만 사용한다.
           </p>
           <div class="hero-actions">
             <a class="button primary" href="#prompts">프롬프트 바로 쓰기</a>
@@ -49,7 +49,7 @@
       <section class="summary-band" aria-label="Core rule">
         <div>
           <strong>제일 중요한 규칙</strong>
-          <p>기존 Codex UI는 디자인 참고자료가 아니다. 제품 목적, 기능, 화면 의도, 데이터 상태만 추출한다.</p>
+          <p>기존 Codex UI는 디자인 참고자료가 아니다. 제품 목적, 기능, 탭/라우트/화면 존재, 데이터 상태만 추출한다.</p>
         </div>
         <div>
           <strong>레퍼런스 이미지는?</strong>
@@ -82,7 +82,7 @@
           <li>
             <span class="step-number">3</span>
             <div>
-              <h3>Stitch가 제품 UI 예시를 만든다</h3>
+              <h3>Stitch가 전체 화면 세트를 만든다</h3>
               <p>Codex가 만든 Brief 전체와 02 프롬프트를 Stitch에 같이 붙인다.</p>
             </div>
           </li>
@@ -96,15 +96,15 @@
           <li>
             <span class="step-number">5</span>
             <div>
-              <h3>제품 UI에 DESIGN.md를 적용한다</h3>
-              <p>제품 UI 예시와 DESIGN.md/design system을 선택하고 04 프롬프트를 붙인다.</p>
+              <h3>전체 화면 세트에 DESIGN.md를 적용한다</h3>
+              <p>전체 화면 세트와 DESIGN.md/design system을 선택하고 04 프롬프트를 붙인다.</p>
             </div>
           </li>
           <li>
             <span class="step-number">6</span>
             <div>
-              <h3>품질 검사 후 zip을 Codex에 통합한다</h3>
-              <p>05로 검사하고, 다운로드한 zip은 06 프롬프트로 제품 프로젝트에 통합한다.</p>
+              <h3>커버리지 검사 후 zip을 Codex에 통합한다</h3>
+              <p>05로 누락 화면과 품질을 검사하고, 다운로드한 zip은 06 프롬프트로 제품 프로젝트에 통합한다.</p>
             </div>
           </li>
         </ol>
@@ -132,21 +132,31 @@
 
 중요:
 기존 Codex UI는 시각 참조가 아니다.
-기존 UI의 레이아웃, 색상, 폰트, 컴포넌트, 스타일, 여백, 장식, 정보 위계는 절대 보존하지 마.
-기존 UI에서는 제품 목적, 기능, 사용자 흐름, 화면 의도, 데이터 상태, 누락 상태, anti-pattern만 추출해.
+기존 UI의 레이아웃, 색상, 폰트, 컴포넌트, 스타일, 여백, 장식, 정보 위계, 탭 배치 방식은 절대 보존하지 마.
+기존 UI에서는 제품 목적, 기능, 사용자 흐름, 화면 의도, 탭/라우트/화면의 존재, 데이터 상태, 누락 상태, anti-pattern만 추출해.
 
 목표:
-Stitch가 기존 UI를 리디자인하는 것이 아니라, 제품 의미를 바탕으로 완전히 새 프론트엔드를 만들 수 있게 하는 것이다.
+Stitch가 기존 UI를 리디자인하는 것이 아니라, 제품 의미를 바탕으로 완전히 새 프론트엔드의 전체 화면 세트를 만들 수 있게 하는 것이다.
 
 언어 규칙:
 최종 Stitch 결과물의 사용자-facing UI 언어를 Brief에 반드시 명시해줘.
-이 가이드 사이트 프로젝트에서는 최종 UI가 한국어여야 한다.
+이 워크플로우에서는 최종 UI의 기본 언어를 한국어로 둔다.
 따라서 Brief에 아래 규칙을 포함해:
 - 모든 화면 문구, 메뉴, 버튼, 라벨, 안내문, 상태 메시지, 예시 데이터는 한국어로 작성한다.
 - Codex, Stitch, DESIGN.md, GitHub Pages, zip, Copy 같은 도구명/파일명/고유명사는 영어를 유지해도 된다.
 - 영어 UI로 생성하지 않는다.
 
 작성할 내용:
+
+0. Coverage Inventory
+   - 전체 탭 목록
+   - 전체 라우트/페이지 목록
+   - 전체 핵심 화면 목록
+   - 모달/드로어/상세/설정/온보딩 등 보조 화면 목록
+   - 각 화면이 필수인지 선택인지
+   - 기존 UI에서 확인한 기능적 존재와, 새 UI에서 재해석해야 하는 방식
+   - Stitch가 반드시 만들어야 하는 화면과 상태
+
 1. Product Snapshot
    - 제품명
    - 한 줄 목적
@@ -167,25 +177,30 @@ Stitch가 기존 UI를 리디자인하는 것이 아니라, 제품 의미를 바
    - 성공 상태
    - 에러/막힘 상태
    - 복구 경로
+   - 이 흐름에 필요한 모든 화면/탭/라우트
 
 4. Screen Goal Cards
    - 화면 이름
+   - 화면 유형: route / tab / modal / drawer / detail / settings / state
    - 사용자 목표
    - 제품 목표
    - 핵심 콘텐츠
    - 주요 액션
    - 보조 액션
-   - 필요한 상태: loading / empty / error / success / permission
+   - 필요한 상태: loading / empty / error / success / permission / validation
+   - 이 화면이 누락되면 깨지는 사용자 흐름
 
 5. Data And State Matrix
    - 데이터 엔티티
    - 필드
    - 어디에 표시되는지
    - 사용자가 할 수 있는 액션
-   - loading / empty / error / success / permission 상태
+   - loading / empty / error / success / permission / validation 상태
+   - 이 데이터가 필요한 화면 목록
 
 6. Interaction Requirements
    - 네비게이션
+   - 탭/라우트 전환
    - CTA
    - 폼/검증
    - 검색/필터/정렬
@@ -196,46 +211,55 @@ Stitch가 기존 UI를 리디자인하는 것이 아니라, 제품 의미를 바
    - 현재 UI에서 버려야 할 문제
    - 왜 문제인지
    - 새 UI에서는 어떻게 해결해야 하는지
+   - 단, 기존 UI의 시각 스타일을 개선 대상으로 삼지 말 것
 
 8. Unknowns And Assumptions
    - 확실하지 않은 점
    - 네가 추정한 점
    - 사용자 확인이 필요한 점
+   - 화면/탭/라우트 커버리지에서 불확실한 점
 
 출력 형식:
 Markdown으로 작성해줘.
 제목은 `# Semantic Rebuild Brief`로 시작해줘.
 
+반드시 포함할 것:
+- 전체 화면/탭/라우트 인벤토리
+- Stitch가 만들어야 할 전체 화면 세트 목록
+- 누락되면 안 되는 상태 목록
+- 기존 Codex UI에서 절대 가져오면 안 되는 시각 요소 목록
+
 마지막에 Stitch에 처음 넣을 때 사용할 짧은 요약도 붙여줘.
 
 다시 강조:
 기존 Codex UI는 디자인 참고자료가 아니다.
-기존 UI는 제품 의미를 추출하는 자료일 뿐이다.</textarea>
+기존 UI는 제품 의미와 화면 커버리지를 추출하는 자료일 뿐이다.</textarea>
           </details>
 
           <details class="prompt-card">
             <summary>
               <span class="badge stitch">Stitch</span>
-              <span>02. 제품 UI 예시 만들기</span>
+              <span>02. 전체 화면 세트 만들기</span>
             </summary>
             <p class="prompt-note">Stitch에 `Semantic Rebuild Brief 전체`를 붙인 다음, 아래 프롬프트를 이어서 붙인다.</p>
             <div class="copy-row">
               <a href="source-md/02_stitch_make_product_ui_prompt.md">원본 md 열기</a>
               <button type="button" class="copy-button" data-copy-target="prompt-02">Copy</button>
             </div>
-            <textarea id="prompt-02" class="prompt-box" readonly>위에 붙인 Semantic Rebuild Brief를 바탕으로 이 제품의 새로운 프론트엔드 콘셉트를 만들어줘.
+            <textarea id="prompt-02" class="prompt-box" readonly>위에 붙인 Semantic Rebuild Brief를 바탕으로 이 제품의 새로운 프론트엔드 전체 화면 세트를 만들어줘.
 
 언어 규칙:
 - 모든 화면 문구, 메뉴, 버튼, 라벨, 안내문, 상태 메시지, 예시 데이터, 설명은 한국어로 작성해.
 - 필요한 고유명사와 도구명은 영어를 유지해도 돼: Codex, Stitch, DESIGN.md, GitHub Pages, zip, Copy.
-- 최종 사용자는 한국어로 이 가이드를 따라가는 사람이라고 가정해.
+- 최종 사용자는 한국어로 이 제품을 사용하는 사람이라고 가정해.
 
 중요 규칙:
-기존 Codex UI는 시각 참조가 아니다. 기존 UI의 레이아웃, 색상, 타이포그래피, 컴포넌트 구조, 여백, 섹션 순서, 정보 위계, 장식 스타일을 보존하거나 개선하거나 따라 하지 마.
+기존 Codex UI는 시각 참조가 아니다. 기존 UI의 레이아웃, 색상, 타이포그래피, 컴포넌트 구조, 탭 배치 방식, 여백, 섹션 순서, 정보 위계, 장식 스타일을 보존하거나 개선하거나 따라 하지 마.
 
-기존 UI에서 사용할 수 있는 것은 오직 제품 의미뿐이야:
+기존 UI에서 사용할 수 있는 것은 오직 제품 의미와 화면 커버리지뿐이야:
 - 제품 목적
 - 기능 목록
+- 탭/라우트/화면의 존재
 - 사용자 흐름
 - 화면 의도
 - 데이터 상태
@@ -243,25 +267,70 @@ Markdown으로 작성해줘.
 - 피해야 할 anti-pattern
 
 목표:
-제품 의미와 사용자 흐름에 맞는 새로운 UI 콘셉트를 만들어줘.
+제품 의미와 사용자 흐름에 맞는 완전히 새로운 전체 앱 구조와 전체 화면 세트를 만들어줘.
+결과물은 Codex가 실제 구현에 참고할 수 있는 화면 설계 재료여야 한다.
 
-이번 첫 시안에서는 최종 시각 스타일보다 제품 구조와 UX 명확성을 우선해.
+먼저 할 일:
+1. Brief에서 전체 탭/라우트/화면/상태 인벤토리를 추출해.
+2. Stitch가 만들어야 할 화면 목록을 `화면 커버리지 표`로 정리해.
+3. 각 화면을 필수 화면, 보조 화면, 상태 화면으로 분류해.
+4. 누락하면 실제 개발이 막히는 화면을 표시해.
 
 생성할 것:
-1. 강한 메인 화면 콘셉트
-2. 필요하면 핵심 보조 화면
-3. 모바일/데스크톱 방향
-4. 현실적인 한국어 예시 콘텐츠
-5. 필요한 loading / empty / error / success 상태
-6. 중요한 가정 목록
+1. 전체 앱 구조
+   - 전역 네비게이션
+   - 탭/라우트 구성
+   - 주요 사용자 흐름
+   - 화면 간 이동 방식
+
+2. 전체 화면 세트
+   - Brief에 나온 모든 핵심 탭
+   - 모든 핵심 라우트/페이지
+   - 필요한 상세 화면
+   - 필요한 모달/드로어/설정/온보딩
+   - 각 화면의 핵심 콘텐츠와 주요 액션
+
+3. 상태 화면
+   - loading
+   - empty
+   - error
+   - success / confirmation
+   - permission / locked
+   - validation
+
+4. 모바일/데스크톱 방향
+   - 전체 앱 구조가 작은 화면과 큰 화면에서 어떻게 바뀌는지
+   - 탭/라우트/테이블/폼이 어떻게 적응하는지
+
+5. 현실적인 한국어 예시 콘텐츠
+   - 화면별 제목
+   - 버튼/라벨/상태 메시지
+   - 예시 데이터
+
+배치 생성 규칙:
+- 한 번에 모든 화면을 만들 수 있으면 전체 화면 세트를 한 번에 만들어.
+- 한 번에 다 만들 수 없으면 대표 화면만 고르고 끝내지 마.
+- 대신 Batch 1부터 만들고, 마지막에 반드시 다음 표를 남겨:
+  1. 이번 배치에서 만든 화면
+  2. 아직 남은 화면
+  3. 다음 배치에서 만들어야 할 화면
+  4. 아직 생성되지 않은 상태 화면
 
 피할 것:
-- Brief가 명확히 요구하지 않는 generic landing page
+- 일부 화면만 예쁘게 만들고 전체 제품을 덮었다고 말하기
+- Brief가 요구한 탭/라우트/핵심 기능 누락
 - 사용자 작업에 도움이 안 되는 장식 섹션
 - 기존 Codex UI의 시각적 흔적
 - Brief에 없는 가짜 기능
+- 영어 UI
 
-여러 방향이 유용하면 2-3개 시안을 만들고, 각 시안의 차이를 한국어로 설명해줘.</textarea>
+출력:
+1. 화면 커버리지 표
+2. 새 전체 앱 구조
+3. 생성한 전체 화면 세트
+4. 상태 화면 목록
+5. 만든 화면 / 남은 화면 추적표
+6. Codex 구현에 필요한 가정</textarea>
           </details>
 
           <details class="prompt-card">
@@ -282,7 +351,7 @@ Markdown으로 작성해줘.
 - 이 디자인 시스템을 적용해 생성될 화면의 사용자-facing 문구는 한국어 기준으로 설계해.
 
 중요:
-이 레퍼런스 이미지는 시각적 분위기와 디자인 시스템 규칙을 추출하기 위한 참고자료야.
+이 레퍼런스 이미지는 전체 화면 세트에 적용할 공통 디자인 시스템을 추출하기 위한 참고자료야.
 원본 사이트의 레이아웃, 섹션 구조, 브랜드명, 로고, 문구, 콘텐츠, 고유한 정체성은 복사하지 마.
 
 추출하고 재해석할 것:
@@ -295,50 +364,57 @@ Markdown으로 작성해줘.
 - 버튼 스타일
 - 카드 스타일
 - form/input 스타일
-- 필요하면 table / data display 스타일
-- 내비게이션 스타일
-- hover, focus, loading, empty, error, success 상태
+- table / data display 스타일
+- navigation / tab 스타일
+- modal / drawer 스타일
+- hover, focus, loading, empty, error, success, permission, validation 상태
 - 전체 mood
 - do / don&#39;t 규칙
 
 디자인 시스템 목표:
-다른 제품 UI에 적용할 수 있는 재사용 가능한 DESIGN.md를 만들어줘.
+Step 02에서 만든 전체 화면 세트의 모든 화면에 일관되게 적용할 수 있는 재사용 가능한 DESIGN.md를 만들어줘.
+한 화면만 예쁘게 바꾸는 스타일 가이드가 아니라, 앱 전체에 적용되는 시스템이어야 한다.
 
 대상 제품 유형:
-[여기에 제품 유형 입력: 예: 업무용 SaaS 대시보드 / 데이터 관리 툴 / 소비자 앱 / 랜딩페이지 / 에디터 / 커머스]
+[여기에 제품 유형 입력: 예: 업무용 SaaS 대시보드 / 데이터 관리 툴 / 소비자 앱 / 랜딩페이지 / 에디터 / 커머스 / 학습 도구]
 
-레퍼런스의 분위기를 이 제품 유형에 맞게 재해석해.
+레퍼런스의 분위기를 이 제품 유형과 전체 화면 세트에 맞게 재해석해.
 
 너무 문자 그대로 복제하지 마.
 분위기와 품질 기준은 유지하되, 새로운 제품에 적용 가능한 독립적인 디자인 시스템으로 만들어줘.
 
 출력:
 1. DESIGN.md
-2. 추출한 시각 방향에 대한 짧은 설명
-3. 레퍼런스 이미지에서 의도적으로 복사하지 않은 것</textarea>
+2. 전체 화면 세트에 적용할 디자인 토큰과 컴포넌트 규칙
+3. 상태 화면 규칙
+4. 추출한 시각 방향에 대한 짧은 설명
+5. 레퍼런스 이미지에서 의도적으로 복사하지 않은 것</textarea>
           </details>
 
           <details class="prompt-card">
             <summary>
               <span class="badge stitch">Stitch</span>
-              <span>04. 제품 UI에 DESIGN.md 적용하기</span>
+              <span>04. 전체 화면 세트에 DESIGN.md 적용하기</span>
             </summary>
-            <p class="prompt-note">제품 UI 예시와 DESIGN.md/design system을 선택한 뒤 붙인다.</p>
+            <p class="prompt-note">전체 화면 세트 또는 현재 배치 화면들과 DESIGN.md/design system을 선택한 뒤 붙인다.</p>
             <div class="copy-row">
               <a href="source-md/04_stitch_apply_design_md_to_ui_prompt.md">원본 md 열기</a>
               <button type="button" class="copy-button" data-copy-target="prompt-04">Copy</button>
             </div>
-            <textarea id="prompt-04" class="prompt-box" readonly>선택한 제품 UI를 선택한 DESIGN.md / design system 기준으로 재작업해줘.
+            <textarea id="prompt-04" class="prompt-box" readonly>선택한 전체 화면 세트를 선택한 DESIGN.md / design system 기준으로 재작업해줘.
 
 언어 규칙:
 - 모든 화면 문구, 메뉴, 버튼, 라벨, 안내문, 상태 메시지, 예시 데이터는 한국어로 작성해.
 - Codex, Stitch, DESIGN.md, GitHub Pages, zip, Copy 같은 도구명/고유명사는 영어를 유지해도 돼.
 
 중요:
-Semantic Rebuild Brief의 제품 목적, 기능, 사용자 흐름, 화면 의도, 핵심 액션은 유지해.
+Semantic Rebuild Brief의 제품 목적, 기능, 사용자 흐름, 화면 의도, 핵심 액션, 전체 화면/탭/라우트 커버리지는 유지해.
+
+기존 Codex UI는 시각 참조가 아니다.
+기존 UI의 레이아웃, 색상, 타이포그래피, 컴포넌트 구조, 탭 배치 방식, 여백, 섹션 순서, 정보 위계, 시각 스타일을 따라 하지 마.
 
 단순히 색만 바꾸지 마.
-선택한 DESIGN.md가 전체 디자인 시스템으로 적용되도록 UI를 다시 구성해.
+선택한 DESIGN.md가 전체 디자인 시스템으로 적용되도록 모든 화면을 다시 구성해.
 
 적용할 것:
 - color token
@@ -347,27 +423,29 @@ Semantic Rebuild Brief의 제품 목적, 기능, 사용자 흐름, 화면 의도
 - 버튼 스타일
 - 카드 스타일
 - form/input 스타일
-- 필요하면 table / data-display 스타일
-- 내비게이션 스타일
+- table / data-display 스타일
+- navigation / tab 스타일
+- modal / drawer 스타일
 - radius, border, shadow, elevation 규칙
-- hover, focus, loading, empty, error, success 상태
+- hover, focus, loading, empty, error, success, permission, validation 상태
 - 모바일/데스크톱 반응형 동작
 
 복사하지 말 것:
-- 기존 Codex UI의 레이아웃, 색상, 타이포그래피, 컴포넌트 구조, 여백, 섹션 순서, 시각 스타일
+- 기존 Codex UI의 레이아웃, 색상, 타이포그래피, 컴포넌트 구조, 탭 배치 방식, 여백, 섹션 순서, 시각 스타일
 - 레퍼런스 사이트의 정확한 레이아웃, 브랜드, 로고, 문구, 콘텐츠, 고유한 정체성
 
-사용 기준:
-- 제품 의미는 Semantic Rebuild Brief를 따른다.
-- 시각 시스템은 선택한 DESIGN.md를 따른다.
-- 선택한 제품 UI는 개선할 현재 작업 화면으로만 사용한다.
+화면 커버리지 규칙:
+- Step 02에서 만든 전체 화면 세트의 화면을 임의로 줄이지 마.
+- 선택된 화면이 전체가 아니라 일부 배치라면, 이번 배치에 적용한 화면과 아직 적용하지 않은 화면을 구분해.
+- 마지막에 `DESIGN.md 적용 커버리지 표`를 남겨.
 
 출력:
-1. 재작업된 메인 화면
-2. 필요하면 핵심 보조 화면 수정안
-3. 관련 상태 화면
-4. 무엇이 바뀌었는지 짧은 요약
-5. 구현에 영향을 주는 가정</textarea>
+1. DESIGN.md가 적용된 전체 화면 세트 또는 현재 배치 화면
+2. 적용한 디자인 시스템 규칙
+3. DESIGN.md 적용 커버리지 표
+4. 아직 DESIGN.md가 적용되지 않은 남은 화면
+5. 관련 상태 화면
+6. 구현에 영향을 주는 가정</textarea>
           </details>
 
           <details class="prompt-card">
@@ -375,15 +453,37 @@ Semantic Rebuild Brief의 제품 목적, 기능, 사용자 흐름, 화면 의도
               <span class="badge stitch">Stitch</span>
               <span>05. 품질 검사 프롬프트</span>
             </summary>
-            <p class="prompt-note">아래 버튼들은 각각 별도 검사 프롬프트다. 필요한 검사만 복사해서 쓴다.</p>
+            <p class="prompt-note">아래 버튼들은 각각 별도 검사 프롬프트다. 먼저 화면 커버리지를 검사하고, 필요한 검사를 이어서 쓴다.</p>
             <div class="copy-row">
               <a href="source-md/05_stitch_quality_check_prompts.md">원본 md 열기</a>
             </div>
             <div class="subprompt-grid">
               <article class="subprompt">
-                <h3>기존 Codex UI 오염 검사</h3>
+                <h3>화면 커버리지 검사</h3>
                 <button type="button" class="copy-button" data-copy-target="prompt-05a">Copy</button>
-                <textarea id="prompt-05a" class="prompt-box compact" readonly>선택한 디자인에 기존 Codex UI의 시각적 흔적이 우연히 남아 있는지 검사해줘.
+                <textarea id="prompt-05a" class="prompt-box compact" readonly>선택한 Stitch 결과가 Semantic Rebuild Brief의 전체 화면/탭/라우트/상태 인벤토리를 빠짐없이 반영했는지 검사해줘.
+
+언어 규칙:
+- 모든 화면 문구, 버튼, 라벨, 안내문, 상태 메시지는 한국어로 유지하거나 수정해.
+
+검사할 것:
+- Brief에 있는 전체 탭이 모두 반영되었는지
+- Brief에 있는 전체 라우트/페이지가 모두 반영되었는지
+- 핵심 화면, 상세 화면, 모달, 드로어, 설정, 온보딩이 필요한 만큼 반영되었는지
+- loading / empty / error / success / permission / validation 상태가 필요한 화면에 있는지
+- 일부 화면만 예쁘게 만들고 전체 앱을 만든 것처럼 끝내지 않았는지
+
+반환:
+1. Brief 기준 전체 화면 인벤토리
+2. 현재 Stitch 결과에 포함된 화면
+3. 누락된 화면/탭/라우트/상태
+4. 바로 추가하거나 다음 배치에서 만들어야 할 화면
+5. 화면 커버리지 판단: 충분함 / 부족함</textarea>
+              </article>
+              <article class="subprompt">
+                <h3>기존 Codex UI 오염 검사</h3>
+                <button type="button" class="copy-button" data-copy-target="prompt-05b">Copy</button>
+                <textarea id="prompt-05b" class="prompt-box compact" readonly>선택한 전체 화면 세트에 기존 Codex UI의 시각적 흔적이 우연히 남아 있는지 검사해줘.
 
 언어 규칙:
 - 모든 화면 문구, 버튼, 라벨, 안내문, 상태 메시지는 한국어로 유지하거나 수정해.
@@ -393,6 +493,7 @@ Semantic Rebuild Brief의 제품 목적, 기능, 사용자 흐름, 화면 의도
 - 색상
 - 타이포그래피
 - 컴포넌트 구조
+- 탭 배치 방식
 - 여백
 - 섹션 순서
 - 정보 위계
@@ -401,6 +502,7 @@ Semantic Rebuild Brief의 제품 목적, 기능, 사용자 흐름, 화면 의도
 기존 Codex UI에서 가져와도 되는 것은 오직 다음뿐이야:
 - 제품 목적
 - 기능
+- 탭/라우트/화면의 존재
 - 사용자 흐름
 - 화면 의도
 - 데이터 상태
@@ -411,13 +513,14 @@ Semantic Rebuild Brief의 제품 목적, 기능, 사용자 흐름, 화면 의도
 
 반환:
 1. 발견한 기존 UI 시각 흔적
-2. 수정한 내용
-3. 남은 가정</textarea>
+2. 영향받은 화면
+3. 수정한 내용
+4. 남은 가정</textarea>
               </article>
               <article class="subprompt">
-                <h3>레퍼런스 과복사 검사</h3>
-                <button type="button" class="copy-button" data-copy-target="prompt-05b">Copy</button>
-                <textarea id="prompt-05b" class="prompt-box compact" readonly>선택한 디자인이 레퍼런스 사이트를 너무 그대로 베꼈는지 검사해줘.
+                <h3>레퍼런스 사이트 과복사 검사</h3>
+                <button type="button" class="copy-button" data-copy-target="prompt-05c">Copy</button>
+                <textarea id="prompt-05c" class="prompt-box compact" readonly>선택한 전체 화면 세트가 레퍼런스 사이트를 너무 그대로 베꼈는지 검사해줘.
 
 언어 규칙:
 - 모든 사용자-facing 문구는 한국어로 유지하거나 수정해.
@@ -429,6 +532,7 @@ Semantic Rebuild Brief의 제품 목적, 기능, 사용자 흐름, 화면 의도
 - 타이포그래피 느낌
 - 여백 리듬
 - 컴포넌트 분위기
+- 상태 표현 방식
 
 레퍼런스 이미지에서 복사하면 안 되는 것:
 - 정확한 레이아웃
@@ -442,13 +546,14 @@ Semantic Rebuild Brief의 제품 목적, 기능, 사용자 흐름, 화면 의도
 
 반환:
 1. 과하게 복사된 요소
-2. 수정한 내용
-3. 유지한 레퍼런스의 좋은 특성</textarea>
+2. 영향받은 화면
+3. 수정한 내용
+4. 유지한 레퍼런스의 좋은 특성</textarea>
               </article>
               <article class="subprompt">
                 <h3>상태 보강</h3>
-                <button type="button" class="copy-button" data-copy-target="prompt-05c">Copy</button>
-                <textarea id="prompt-05c" class="prompt-box compact" readonly>선택한 디자인에서 빠진 제품 상태가 있는지 검사해줘.
+                <button type="button" class="copy-button" data-copy-target="prompt-05d">Copy</button>
+                <textarea id="prompt-05d" class="prompt-box compact" readonly>선택한 전체 화면 세트에서 빠진 제품 상태가 있는지 검사해줘.
 
 언어 규칙:
 - 모든 상태 메시지, 안내문, 버튼 문구는 한국어로 작성해.
@@ -459,7 +564,7 @@ Semantic Rebuild Brief의 제품 목적, 기능, 사용자 흐름, 화면 의도
 - error 상태
 - validation 상태
 - success / confirmation 상태
-- 필요하면 permission / locked 상태
+- permission / locked 상태
 
 각 상태는 사용자가 다음을 이해할 수 있게 해야 해:
 - 무슨 일이 일어났는지
@@ -469,14 +574,15 @@ Semantic Rebuild Brief의 제품 목적, 기능, 사용자 흐름, 화면 의도
 선택한 DESIGN.md와 일관되게 유지해.
 
 반환:
-1. 수정된 상태 화면
-2. 보강한 누락 상태
-3. 가정</textarea>
+1. 화면별 누락 상태
+2. 수정된 상태 화면
+3. 보강한 누락 상태
+4. 가정</textarea>
               </article>
               <article class="subprompt">
                 <h3>DESIGN.md 준수 검사</h3>
-                <button type="button" class="copy-button" data-copy-target="prompt-05d">Copy</button>
-                <textarea id="prompt-05d" class="prompt-box compact" readonly>선택한 UI가 선택한 DESIGN.md / design system을 제대로 따르는지 검사해줘.
+                <button type="button" class="copy-button" data-copy-target="prompt-05e">Copy</button>
+                <textarea id="prompt-05e" class="prompt-box compact" readonly>선택한 전체 화면 세트가 선택한 DESIGN.md / design system을 제대로 따르는지 검사해줘.
 
 언어 규칙:
 - 화면 문구와 상태 메시지는 한국어로 유지해.
@@ -492,21 +598,23 @@ Semantic Rebuild Brief의 제품 목적, 기능, 사용자 흐름, 화면 의도
 - 카드
 - form
 - table / data display
-- 내비게이션
+- navigation / tab
+- modal / drawer
 - hover / focus 상태
-- loading / empty / error / success 상태
+- loading / empty / error / success / permission / validation 상태
 
-DESIGN.md와 충돌하는 부분이 있으면 수정해.
+DESIGN.md와 충돌하는 부분이 있으면 전체 화면 세트 기준으로 수정해.
 
 반환:
 1. 수정한 내용
-2. 적용한 DESIGN.md 규칙
-3. 모호하거나 빠진 DESIGN.md 규칙</textarea>
+2. 영향받은 화면
+3. 적용한 DESIGN.md 규칙
+4. 모호하거나 빠진 DESIGN.md 규칙</textarea>
               </article>
               <article class="subprompt">
                 <h3>모바일/데스크톱 검사</h3>
-                <button type="button" class="copy-button" data-copy-target="prompt-05e">Copy</button>
-                <textarea id="prompt-05e" class="prompt-box compact" readonly>선택한 디자인이 모바일과 데스크톱에서 모두 실제로 쓰기 좋은지 검사해줘.
+                <button type="button" class="copy-button" data-copy-target="prompt-05f">Copy</button>
+                <textarea id="prompt-05f" class="prompt-box compact" readonly>선택한 전체 화면 세트가 모바일과 데스크톱에서 모두 실제로 쓰기 좋은지 검사해줘.
 
 언어 규칙:
 - 모바일/데스크톱 화면의 모든 사용자-facing 문구는 한국어로 유지해.
@@ -515,9 +623,10 @@ DESIGN.md와 충돌하는 부분이 있으면 수정해.
 - 주요 액션이 바로 보이는지
 - 텍스트 크기가 읽기 좋은지
 - 터치 영역이 충분한지
-- 내비게이션이 작은 화면에서도 자연스러운지
+- 내비게이션과 탭 구조가 작은 화면에서도 자연스러운지
 - 작은 화면에서 table/list가 깨지지 않는지
 - form을 쓰기 쉬운지
+- 모달/드로어가 모바일에서 과하게 답답하지 않은지
 - 스크롤 동작이 자연스러운지
 - 텍스트나 컨트롤이 겹치지 않는지
 
@@ -526,7 +635,8 @@ DESIGN.md와 충돌하는 부분이 있으면 수정해.
 반환:
 1. 모바일 수정 내용
 2. 데스크톱 수정 내용
-3. 남은 반응형 가정</textarea>
+3. 화면별 반응형 리스크
+4. 남은 반응형 가정</textarea>
               </article>
             </div>
           </details>
@@ -546,32 +656,42 @@ DESIGN.md와 충돌하는 부분이 있으면 수정해.
 중요:
 Stitch zip을 그대로 덮어쓰지 마.
 현재 프로젝트의 실제 스택, 라우팅, 상태관리, 데이터 흐름, 빌드 설정을 먼저 확인해.
+Stitch 결과물의 일부 예쁜 화면만 가져오지 말고, Semantic Rebuild Brief의 전체 화면/탭/라우트 커버리지를 기준으로 통합해.
 
 해야 할 일:
 1. 현재 프로젝트 구조와 프론트엔드 스택을 확인해.
-2. Stitch zip 내부 구조를 확인해.
-3. 어떤 파일/컴포넌트/스타일을 가져올지 계획해.
-4. 기존 기능, 라우팅, API 연동, 상태관리, 인증, 데이터 처리를 보존해.
-5. Stitch 결과물의 디자인, 레이아웃, 컴포넌트 아이디어를 현재 프로젝트 구조에 맞게 통합해.
-6. 하드코딩된 더미 데이터가 있으면 실제 데이터 흐름에 맞게 바꿔.
-7. loading / empty / error / success 상태를 실제 코드에 반영해.
-8. 접근성, 반응형, 텍스트 overflow를 확인해.
-9. 빌드 또는 테스트를 실행해서 깨진 부분을 수정해.
+2. 현재 프로젝트의 전체 탭/라우트/화면/기능 인벤토리를 확인해.
+3. Stitch zip 내부 구조와 화면 목록을 확인해.
+4. Brief의 전체 화면 인벤토리와 Stitch zip의 화면 세트를 비교해.
+5. 누락된 화면, 누락된 상태, 누락된 라우트, 누락된 주요 액션을 목록화해.
+6. 어떤 파일/컴포넌트/스타일을 가져올지 계획해.
+7. 기존 기능, 라우팅, API 연동, 상태관리, 인증, 데이터 처리를 보존해.
+8. Stitch 결과물의 디자인, 레이아웃, 컴포넌트 아이디어를 현재 프로젝트 구조에 맞게 통합해.
+9. 하드코딩된 더미 데이터가 있으면 실제 데이터 흐름에 맞게 바꿔.
+10. loading / empty / error / success / permission / validation 상태를 실제 코드에 반영해.
+11. 접근성, 반응형, 텍스트 overflow를 확인해.
+12. 빌드 또는 테스트를 실행해서 깨진 부분을 수정해.
 
 주의:
 - 기존 프로젝트 기능을 삭제하지 마.
 - 사용자 변경사항을 되돌리지 마.
 - Stitch 코드를 무비판적으로 복붙하지 마.
+- Stitch zip의 일부 화면만 보고 전체 앱 통합이 끝났다고 판단하지 마.
 - 기존 Codex UI의 낡은 시각 스타일로 되돌리지 마.
 - 레퍼런스 사이트의 브랜드/문구/로고를 복사하지 마.
 
 출력:
-1. 통합 계획
-2. 적용한 파일 목록
-3. 유지한 기존 기능
-4. 수정한 UI/컴포넌트
-5. 실행한 검증 명령
-6. 남은 리스크</textarea>
+1. 전체 화면/탭/라우트 커버리지 비교
+2. 통합 계획
+3. 적용한 파일 목록
+4. 유지한 기존 기능
+5. 수정한 UI/컴포넌트
+6. 추가하거나 보강한 누락 화면/상태
+7. 실행한 검증 명령
+8. 남은 리스크
+
+Stitch zip 경로:
+[여기에 zip 경로 입력]</textarea>
           </details>
         </div>
       </section>
@@ -611,5 +731,7 @@ Stitch zip을 그대로 덮어쓰지 마.
     <script src="script.js"></script>
   </body>
 </html>
+
+
 
 
