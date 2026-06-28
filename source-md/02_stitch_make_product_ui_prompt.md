@@ -9,39 +9,43 @@
 3. 아래 프롬프트를 이어서 붙여넣는다.
 
 ```text
-Use the Semantic Rebuild Brief above to create a new frontend concept for this product.
+위에 붙인 Semantic Rebuild Brief를 바탕으로 이 제품의 새로운 프론트엔드 콘셉트를 만들어줘.
 
-Critical rule:
-The existing Codex-generated UI is not a visual reference. Do not preserve, improve, redesign, imitate, or borrow its layout, colors, typography, component structure, spacing, section order, information hierarchy, or decorative style.
+언어 규칙:
+- 모든 화면 문구, 메뉴, 버튼, 라벨, 안내문, 상태 메시지, 예시 데이터, 설명은 한국어로 작성해.
+- 필요한 고유명사와 도구명은 영어를 유지해도 돼: Codex, Stitch, DESIGN.md, GitHub Pages, zip, Copy.
+- 최종 사용자는 한국어로 이 가이드를 따라가는 사람이라고 가정해.
 
-Use the existing UI only as semantic evidence for:
-- product purpose
-- feature inventory
-- user flows
-- screen intent
-- data states
-- missing states
-- anti-patterns to avoid
+중요 규칙:
+기존 Codex UI는 시각 참조가 아니다. 기존 UI의 레이아웃, 색상, 타이포그래피, 컴포넌트 구조, 여백, 섹션 순서, 정보 위계, 장식 스타일을 보존하거나 개선하거나 따라 하지 마.
 
-Goal:
-Create a new UI concept that fits the product meaning and user workflows.
+기존 UI에서 사용할 수 있는 것은 오직 제품 의미뿐이야:
+- 제품 목적
+- 기능 목록
+- 사용자 흐름
+- 화면 의도
+- 데이터 상태
+- 누락 상태
+- 피해야 할 anti-pattern
 
-For this first pass, focus on product structure and UX clarity, not final visual styling.
+목표:
+제품 의미와 사용자 흐름에 맞는 새로운 UI 콘셉트를 만들어줘.
 
-Generate:
-1. A strong main screen concept
-2. Key secondary screens if needed
-3. Mobile and desktop direction
-4. Realistic product content
-5. Loading, empty, error, and success states where relevant
-6. Notes on assumptions
+이번 첫 시안에서는 최종 시각 스타일보다 제품 구조와 UX 명확성을 우선해.
 
-Avoid:
-- generic landing page sections unless the brief clearly asks for a landing page
-- decorative content that does not support the workflow
-- visual inheritance from the old Codex UI
-- fake features not supported by the brief
+생성할 것:
+1. 강한 메인 화면 콘셉트
+2. 필요하면 핵심 보조 화면
+3. 모바일/데스크톱 방향
+4. 현실적인 한국어 예시 콘텐츠
+5. 필요한 loading / empty / error / success 상태
+6. 중요한 가정 목록
 
-If multiple directions are useful, generate 2-3 options and explain the difference between them.
+피할 것:
+- Brief가 명확히 요구하지 않는 generic landing page
+- 사용자 작업에 도움이 안 되는 장식 섹션
+- 기존 Codex UI의 시각적 흔적
+- Brief에 없는 가짜 기능
+
+여러 방향이 유용하면 2-3개 시안을 만들고, 각 시안의 차이를 한국어로 설명해줘.
 ```
-

@@ -8,138 +8,152 @@
 ## 1. 기존 Codex UI 오염 검사
 
 ```text
-Review the selected design for accidental inheritance from the old Codex-generated UI.
+선택한 디자인에 기존 Codex UI의 시각적 흔적이 우연히 남아 있는지 검사해줘.
 
-The old Codex UI must not influence:
-- layout
-- colors
-- typography
-- component structure
-- spacing
-- section order
-- information hierarchy
-- decorative style
+언어 규칙:
+- 모든 화면 문구, 버튼, 라벨, 안내문, 상태 메시지는 한국어로 유지하거나 수정해.
 
-It may influence only:
-- product purpose
-- features
-- user flows
-- screen intent
-- data states
-- missing states
-- anti-patterns to avoid
+기존 Codex UI가 영향을 주면 안 되는 것:
+- 레이아웃
+- 색상
+- 타이포그래피
+- 컴포넌트 구조
+- 여백
+- 섹션 순서
+- 정보 위계
+- 장식 스타일
 
-If you find visual inheritance from the old Codex UI, revise the design to remove it while preserving the product meaning and the selected DESIGN.md.
+기존 Codex UI에서 가져와도 되는 것은 오직 다음뿐이야:
+- 제품 목적
+- 기능
+- 사용자 흐름
+- 화면 의도
+- 데이터 상태
+- 누락 상태
+- 피해야 할 anti-pattern
 
-Return:
-1. inherited visual choices found
-2. revisions made
-3. remaining assumptions
+기존 Codex UI의 시각적 흔적이 보이면, 제품 의미와 선택한 DESIGN.md는 유지하면서 그 흔적을 제거해줘.
+
+반환:
+1. 발견한 기존 UI 시각 흔적
+2. 수정한 내용
+3. 남은 가정
 ```
 
 ## 2. 레퍼런스 사이트 과복사 검사
 
 ```text
-Review the selected design for excessive copying from the reference site.
+선택한 디자인이 레퍼런스 사이트를 너무 그대로 베꼈는지 검사해줘.
 
-The reference image should influence:
+언어 규칙:
+- 모든 사용자-facing 문구는 한국어로 유지하거나 수정해.
+
+레퍼런스 이미지가 영향을 줘도 되는 것:
 - mood
-- quality bar
-- color feel
-- typography feel
-- spacing rhythm
-- component atmosphere
+- 품질 기준
+- 색감
+- 타이포그래피 느낌
+- 여백 리듬
+- 컴포넌트 분위기
 
-It should not copy:
-- exact layout
-- section structure
-- brand identity
-- logo
-- text/content
-- proprietary visual identity
+레퍼런스 이미지에서 복사하면 안 되는 것:
+- 정확한 레이아웃
+- 섹션 구조
+- 브랜드 정체성
+- 로고
+- 문구/콘텐츠
+- 고유한 시각 정체성
 
-If the design copies the reference too literally, revise it so it becomes an original product UI that only borrows the design-system direction.
+레퍼런스를 너무 문자 그대로 복사한 부분이 있으면, 디자인 시스템 방향만 유지하고 독립적인 제품 UI로 수정해줘.
 
-Return:
-1. copied elements found
-2. revisions made
-3. what reference qualities were preserved
+반환:
+1. 과하게 복사된 요소
+2. 수정한 내용
+3. 유지한 레퍼런스의 좋은 특성
 ```
 
 ## 3. 상태 보강
 
 ```text
-Audit the selected design for missing product states.
+선택한 디자인에서 빠진 제품 상태가 있는지 검사해줘.
 
-Add or revise:
-- loading state
-- empty state
-- error state
-- validation state
-- success/confirmation state
-- permission or locked state if relevant
+언어 규칙:
+- 모든 상태 메시지, 안내문, 버튼 문구는 한국어로 작성해.
 
-Every state should help the user understand:
-- what happened
-- what they can do next
-- whether the system is still working
+추가하거나 수정할 상태:
+- loading 상태
+- empty 상태
+- error 상태
+- validation 상태
+- success / confirmation 상태
+- 필요하면 permission / locked 상태
 
-Keep the design consistent with the selected DESIGN.md.
+각 상태는 사용자가 다음을 이해할 수 있게 해야 해:
+- 무슨 일이 일어났는지
+- 다음에 무엇을 할 수 있는지
+- 시스템이 아직 처리 중인지
 
-Return:
-1. revised state designs
-2. missing states fixed
-3. assumptions
+선택한 DESIGN.md와 일관되게 유지해.
+
+반환:
+1. 수정된 상태 화면
+2. 보강한 누락 상태
+3. 가정
 ```
 
 ## 4. DESIGN.md 준수 검사
 
 ```text
-Audit the selected UI against the selected DESIGN.md / design system.
+선택한 UI가 선택한 DESIGN.md / design system을 제대로 따르는지 검사해줘.
 
-Check:
-- color tokens
-- typography
-- spacing
+언어 규칙:
+- 화면 문구와 상태 메시지는 한국어로 유지해.
+
+검사할 것:
+- color token
+- 타이포그래피
+- 여백
 - radius
-- borders
-- shadows/elevation
-- buttons
-- cards
-- forms
-- tables/data displays
-- navigation
-- hover/focus states
-- loading/empty/error/success states
+- border
+- shadow / elevation
+- 버튼
+- 카드
+- form
+- table / data display
+- 내비게이션
+- hover / focus 상태
+- loading / empty / error / success 상태
 
-Revise any part that conflicts with DESIGN.md.
+DESIGN.md와 충돌하는 부분이 있으면 수정해.
 
-Return:
-1. revisions made
-2. DESIGN.md rules applied
-3. DESIGN.md rules that were ambiguous or missing
+반환:
+1. 수정한 내용
+2. 적용한 DESIGN.md 규칙
+3. 모호하거나 빠진 DESIGN.md 규칙
 ```
 
 ## 5. 모바일/데스크톱 검사
 
 ```text
-Review the selected design for mobile and desktop usability.
+선택한 디자인이 모바일과 데스크톱에서 모두 실제로 쓰기 좋은지 검사해줘.
 
-Check:
-- primary action visibility
-- readable text sizes
-- touch target size
-- navigation behavior
-- table/list behavior on small screens
-- form usability
-- scrolling behavior
-- no overlapping text or controls
+언어 규칙:
+- 모바일/데스크톱 화면의 모든 사용자-facing 문구는 한국어로 유지해.
 
-Revise the design so both mobile and desktop are usable.
+검사할 것:
+- 주요 액션이 바로 보이는지
+- 텍스트 크기가 읽기 좋은지
+- 터치 영역이 충분한지
+- 내비게이션이 작은 화면에서도 자연스러운지
+- 작은 화면에서 table/list가 깨지지 않는지
+- form을 쓰기 쉬운지
+- 스크롤 동작이 자연스러운지
+- 텍스트나 컨트롤이 겹치지 않는지
 
-Return:
-1. mobile changes
-2. desktop changes
-3. remaining responsive assumptions
+모바일과 데스크톱 모두에서 사용할 수 있게 수정해.
+
+반환:
+1. 모바일 수정 내용
+2. 데스크톱 수정 내용
+3. 남은 반응형 가정
 ```
-

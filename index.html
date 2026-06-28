@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="ko">
   <head>
     <meta charset="utf-8" />
@@ -215,40 +215,7 @@ Markdown으로 작성해줘.
               <a href="source-md/02_stitch_make_product_ui_prompt.md">원본 md 열기</a>
               <button type="button" class="copy-button" data-copy-target="prompt-02">Copy</button>
             </div>
-            <textarea id="prompt-02" class="prompt-box" readonly>Use the Semantic Rebuild Brief above to create a new frontend concept for this product.
-
-Critical rule:
-The existing Codex-generated UI is not a visual reference. Do not preserve, improve, redesign, imitate, or borrow its layout, colors, typography, component structure, spacing, section order, information hierarchy, or decorative style.
-
-Use the existing UI only as semantic evidence for:
-- product purpose
-- feature inventory
-- user flows
-- screen intent
-- data states
-- missing states
-- anti-patterns to avoid
-
-Goal:
-Create a new UI concept that fits the product meaning and user workflows.
-
-For this first pass, focus on product structure and UX clarity, not final visual styling.
-
-Generate:
-1. A strong main screen concept
-2. Key secondary screens if needed
-3. Mobile and desktop direction
-4. Realistic product content
-5. Loading, empty, error, and success states where relevant
-6. Notes on assumptions
-
-Avoid:
-- generic landing page sections unless the brief clearly asks for a landing page
-- decorative content that does not support the workflow
-- visual inheritance from the old Codex UI
-- fake features not supported by the brief
-
-If multiple directions are useful, generate 2-3 options and explain the difference between them.</textarea>
+            <textarea id="prompt-02" class="prompt-box" readonly>위</textarea>
           </details>
 
           <details class="prompt-card">
@@ -261,43 +228,48 @@ If multiple directions are useful, generate 2-3 options and explain the differen
               <a href="source-md/03_stitch_make_design_md_from_reference_prompt.md">원본 md 열기</a>
               <button type="button" class="copy-button" data-copy-target="prompt-03">Copy</button>
             </div>
-            <textarea id="prompt-03" class="prompt-box" readonly>Create a DESIGN.md / design system from the selected reference image.
+            <textarea id="prompt-03" class="prompt-box" readonly>선택한 레퍼런스 이미지를 바탕으로 DESIGN.md / design system을 만들어줘.
 
-Important:
-This reference image is for extracting visual direction and design-system rules.
-Do not copy the original site's layout, section structure, brand name, logo, text, content, or proprietary identity.
+언어 규칙:
+- DESIGN.md의 설명, do/don&#39;t, 사용 가이드, 예시 UI 문구는 한국어로 작성해.
+- 디자인 토큰 이름은 `primary`, `surface`, `text-muted`처럼 영어 키를 써도 돼.
+- 이 디자인 시스템을 적용해 생성될 화면의 사용자-facing 문구는 한국어 기준으로 설계해.
 
-Extract and reinterpret:
-- color palette
-- semantic color tokens
-- typography style
-- heading, body, label, and data-text rules
-- spacing rhythm
-- radius, borders, shadows, and elevation
-- button style
-- card style
-- form/input style
-- table or data display style if relevant
-- navigation style
-- hover, focus, loading, empty, error, and success states
-- overall mood
-- do's and don'ts
+중요:
+이 레퍼런스 이미지는 시각적 분위기와 디자인 시스템 규칙을 추출하기 위한 참고자료야.
+원본 사이트의 레이아웃, 섹션 구조, 브랜드명, 로고, 문구, 콘텐츠, 고유한 정체성은 복사하지 마.
 
-Design-system goal:
-Create a reusable DESIGN.md that can be applied to a different product UI.
+추출하고 재해석할 것:
+- 색상 팔레트
+- semantic color token
+- 타이포그래피 스타일
+- 제목, 본문, 라벨, 데이터 텍스트 규칙
+- 여백 리듬
+- radius, border, shadow, elevation 규칙
+- 버튼 스타일
+- 카드 스타일
+- form/input 스타일
+- 필요하면 table / data display 스타일
+- 내비게이션 스타일
+- hover, focus, loading, empty, error, success 상태
+- 전체 mood
+- do / don&#39;t 규칙
 
-The target product type is:
+디자인 시스템 목표:
+다른 제품 UI에 적용할 수 있는 재사용 가능한 DESIGN.md를 만들어줘.
+
+대상 제품 유형:
 [여기에 제품 유형 입력: 예: 업무용 SaaS 대시보드 / 데이터 관리 툴 / 소비자 앱 / 랜딩페이지 / 에디터 / 커머스]
 
-Adapt the reference style to this product type.
+레퍼런스의 분위기를 이 제품 유형에 맞게 재해석해.
 
-Do not make the design system too literal.
-Preserve the mood and quality bar, but make it usable for a new product.
+너무 문자 그대로 복제하지 마.
+분위기와 품질 기준은 유지하되, 새로운 제품에 적용 가능한 독립적인 디자인 시스템으로 만들어줘.
 
-Output:
+출력:
 1. DESIGN.md
-2. Short explanation of the extracted visual direction
-3. What was intentionally not copied from the reference image</textarea>
+2. 추출한 시각 방향에 대한 짧은 설명
+3. 레퍼런스 이미지에서 의도적으로 복사하지 않은 것</textarea>
           </details>
 
           <details class="prompt-card">
@@ -310,42 +282,7 @@ Output:
               <a href="source-md/04_stitch_apply_design_md_to_ui_prompt.md">원본 md 열기</a>
               <button type="button" class="copy-button" data-copy-target="prompt-04">Copy</button>
             </div>
-            <textarea id="prompt-04" class="prompt-box" readonly>Rework the selected product UI using the selected DESIGN.md / design system.
-
-Important:
-Preserve the product purpose, features, user workflow, screen intent, and core actions from the Semantic Rebuild Brief.
-
-Do not simply recolor the screen.
-Recompose the UI so the selected DESIGN.md is applied as a full design system.
-
-Apply:
-- color tokens
-- typography rules
-- spacing rhythm
-- button style
-- card style
-- form/input style
-- table or data-display style if relevant
-- navigation style
-- radius, border, shadow, and elevation rules
-- hover, focus, loading, empty, error, and success states
-- mobile and desktop responsive behavior
-
-Do not copy:
-- the old Codex UI's layout, colors, typography, component structure, spacing, section order, or visual style
-- the reference site's exact layout, brand, logo, text, content, or proprietary identity
-
-Use:
-- Semantic Rebuild Brief for product meaning
-- selected DESIGN.md for visual system
-- selected product UI only as the current working screen to improve
-
-Output:
-1. Revised main screen
-2. Key secondary screen updates if needed
-3. Relevant state variants
-4. Short summary of what changed
-5. Any assumptions that affect implementation</textarea>
+            <textarea id="prompt-04" class="prompt-box" readonly>선</textarea>
           </details>
 
           <details class="prompt-card">
@@ -361,135 +298,150 @@ Output:
               <article class="subprompt">
                 <h3>기존 Codex UI 오염 검사</h3>
                 <button type="button" class="copy-button" data-copy-target="prompt-05a">Copy</button>
-                <textarea id="prompt-05a" class="prompt-box compact" readonly>Review the selected design for accidental inheritance from the old Codex-generated UI.
+                <textarea id="prompt-05a" class="prompt-box compact" readonly>선택한 디자인에 기존 Codex UI의 시각적 흔적이 우연히 남아 있는지 검사해줘.
 
-The old Codex UI must not influence:
-- layout
-- colors
-- typography
-- component structure
-- spacing
-- section order
-- information hierarchy
-- decorative style
+언어 규칙:
+- 모든 화면 문구, 버튼, 라벨, 안내문, 상태 메시지는 한국어로 유지하거나 수정해.
 
-It may influence only:
-- product purpose
-- features
-- user flows
-- screen intent
-- data states
-- missing states
-- anti-patterns to avoid
+기존 Codex UI가 영향을 주면 안 되는 것:
+- 레이아웃
+- 색상
+- 타이포그래피
+- 컴포넌트 구조
+- 여백
+- 섹션 순서
+- 정보 위계
+- 장식 스타일
 
-If you find visual inheritance from the old Codex UI, revise the design to remove it while preserving the product meaning and the selected DESIGN.md.
+기존 Codex UI에서 가져와도 되는 것은 오직 다음뿐이야:
+- 제품 목적
+- 기능
+- 사용자 흐름
+- 화면 의도
+- 데이터 상태
+- 누락 상태
+- 피해야 할 anti-pattern
 
-Return:
-1. inherited visual choices found
-2. revisions made
-3. remaining assumptions</textarea>
+기존 Codex UI의 시각적 흔적이 보이면, 제품 의미와 선택한 DESIGN.md는 유지하면서 그 흔적을 제거해줘.
+
+반환:
+1. 발견한 기존 UI 시각 흔적
+2. 수정한 내용
+3. 남은 가정</textarea>
               </article>
               <article class="subprompt">
                 <h3>레퍼런스 과복사 검사</h3>
                 <button type="button" class="copy-button" data-copy-target="prompt-05b">Copy</button>
-                <textarea id="prompt-05b" class="prompt-box compact" readonly>Review the selected design for excessive copying from the reference site.
+                <textarea id="prompt-05b" class="prompt-box compact" readonly>선택한 디자인이 레퍼런스 사이트를 너무 그대로 베꼈는지 검사해줘.
 
-The reference image should influence:
+언어 규칙:
+- 모든 사용자-facing 문구는 한국어로 유지하거나 수정해.
+
+레퍼런스 이미지가 영향을 줘도 되는 것:
 - mood
-- quality bar
-- color feel
-- typography feel
-- spacing rhythm
-- component atmosphere
+- 품질 기준
+- 색감
+- 타이포그래피 느낌
+- 여백 리듬
+- 컴포넌트 분위기
 
-It should not copy:
-- exact layout
-- section structure
-- brand identity
-- logo
-- text/content
-- proprietary visual identity
+레퍼런스 이미지에서 복사하면 안 되는 것:
+- 정확한 레이아웃
+- 섹션 구조
+- 브랜드 정체성
+- 로고
+- 문구/콘텐츠
+- 고유한 시각 정체성
 
-If the design copies the reference too literally, revise it so it becomes an original product UI that only borrows the design-system direction.
+레퍼런스를 너무 문자 그대로 복사한 부분이 있으면, 디자인 시스템 방향만 유지하고 독립적인 제품 UI로 수정해줘.
 
-Return:
-1. copied elements found
-2. revisions made
-3. what reference qualities were preserved</textarea>
+반환:
+1. 과하게 복사된 요소
+2. 수정한 내용
+3. 유지한 레퍼런스의 좋은 특성</textarea>
               </article>
               <article class="subprompt">
                 <h3>상태 보강</h3>
                 <button type="button" class="copy-button" data-copy-target="prompt-05c">Copy</button>
-                <textarea id="prompt-05c" class="prompt-box compact" readonly>Audit the selected design for missing product states.
+                <textarea id="prompt-05c" class="prompt-box compact" readonly>선택한 디자인에서 빠진 제품 상태가 있는지 검사해줘.
 
-Add or revise:
-- loading state
-- empty state
-- error state
-- validation state
-- success/confirmation state
-- permission or locked state if relevant
+언어 규칙:
+- 모든 상태 메시지, 안내문, 버튼 문구는 한국어로 작성해.
 
-Every state should help the user understand:
-- what happened
-- what they can do next
-- whether the system is still working
+추가하거나 수정할 상태:
+- loading 상태
+- empty 상태
+- error 상태
+- validation 상태
+- success / confirmation 상태
+- 필요하면 permission / locked 상태
 
-Keep the design consistent with the selected DESIGN.md.
+각 상태는 사용자가 다음을 이해할 수 있게 해야 해:
+- 무슨 일이 일어났는지
+- 다음에 무엇을 할 수 있는지
+- 시스템이 아직 처리 중인지
 
-Return:
-1. revised state designs
-2. missing states fixed
-3. assumptions</textarea>
+선택한 DESIGN.md와 일관되게 유지해.
+
+반환:
+1. 수정된 상태 화면
+2. 보강한 누락 상태
+3. 가정</textarea>
               </article>
               <article class="subprompt">
                 <h3>DESIGN.md 준수 검사</h3>
                 <button type="button" class="copy-button" data-copy-target="prompt-05d">Copy</button>
-                <textarea id="prompt-05d" class="prompt-box compact" readonly>Audit the selected UI against the selected DESIGN.md / design system.
+                <textarea id="prompt-05d" class="prompt-box compact" readonly>선택한 UI가 선택한 DESIGN.md / design system을 제대로 따르는지 검사해줘.
 
-Check:
-- color tokens
-- typography
-- spacing
+언어 규칙:
+- 화면 문구와 상태 메시지는 한국어로 유지해.
+
+검사할 것:
+- color token
+- 타이포그래피
+- 여백
 - radius
-- borders
-- shadows/elevation
-- buttons
-- cards
-- forms
-- tables/data displays
-- navigation
-- hover/focus states
-- loading/empty/error/success states
+- border
+- shadow / elevation
+- 버튼
+- 카드
+- form
+- table / data display
+- 내비게이션
+- hover / focus 상태
+- loading / empty / error / success 상태
 
-Revise any part that conflicts with DESIGN.md.
+DESIGN.md와 충돌하는 부분이 있으면 수정해.
 
-Return:
-1. revisions made
-2. DESIGN.md rules applied
-3. DESIGN.md rules that were ambiguous or missing</textarea>
+반환:
+1. 수정한 내용
+2. 적용한 DESIGN.md 규칙
+3. 모호하거나 빠진 DESIGN.md 규칙</textarea>
               </article>
               <article class="subprompt">
                 <h3>모바일/데스크톱 검사</h3>
                 <button type="button" class="copy-button" data-copy-target="prompt-05e">Copy</button>
-                <textarea id="prompt-05e" class="prompt-box compact" readonly>Review the selected design for mobile and desktop usability.
+                <textarea id="prompt-05e" class="prompt-box compact" readonly>선택한 디자인이 모바일과 데스크톱에서 모두 실제로 쓰기 좋은지 검사해줘.
 
-Check:
-- primary action visibility
-- readable text sizes
-- touch target size
-- navigation behavior
-- table/list behavior on small screens
-- form usability
-- scrolling behavior
-- no overlapping text or controls
+언어 규칙:
+- 모바일/데스크톱 화면의 모든 사용자-facing 문구는 한국어로 유지해.
 
-Revise the design so both mobile and desktop are usable.
+검사할 것:
+- 주요 액션이 바로 보이는지
+- 텍스트 크기가 읽기 좋은지
+- 터치 영역이 충분한지
+- 내비게이션이 작은 화면에서도 자연스러운지
+- 작은 화면에서 table/list가 깨지지 않는지
+- form을 쓰기 쉬운지
+- 스크롤 동작이 자연스러운지
+- 텍스트나 컨트롤이 겹치지 않는지
 
-Return:
-1. mobile changes
-2. desktop changes
-3. remaining responsive assumptions</textarea>
+모바일과 데스크톱 모두에서 사용할 수 있게 수정해.
+
+반환:
+1. 모바일 수정 내용
+2. 데스크톱 수정 내용
+3. 남은 반응형 가정</textarea>
               </article>
             </div>
           </details>
@@ -574,3 +526,4 @@ Stitch zip을 그대로 덮어쓰지 마.
     <script src="script.js"></script>
   </body>
 </html>
+
