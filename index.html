@@ -8,25 +8,37 @@
       name="description"
       content="Codex 프로젝트의 전체 화면 커버리지와 레퍼런스 디자인을 Google Stitch에서 결합하는 단계별 프롬프트 가이드"
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@600;700;800&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <header class="site-header">
-      <nav class="topbar" aria-label="Primary">
+      <nav class="topbar" aria-label="주요 메뉴">
         <a class="brand" href="#top" aria-label="Stitch workflow home">
           <span class="brand-mark">S</span>
-          <span>Stitch Workflow</span>
+          <span>
+            <strong>Execution Codex</strong>
+            <small>Stitch workflow guide</small>
+          </span>
         </a>
         <div class="nav-links">
-          <a href="#steps">Steps</a>
-          <a href="#prompts">Prompts</a>
-          <a href="#deploy">Deploy</a>
-          <a href="source-md/07_ONE_PAGE_CHEATSHEET.md">Cheatsheet</a>
+          <a href="#steps">실행 순서</a>
+          <a href="#prompts">프롬프트</a>
+          <a href="#source">원본 자료</a>
+          <a href="#deploy">배포/백업</a>
+          <a href="stitch-handoff/semantic-rebuild-brief.md">Stitch Brief</a>
+          <a href="source-md/07_ONE_PAGE_CHEATSHEET.md">치트시트</a>
         </div>
       </nav>
 
       <section class="hero" id="top">
         <div class="hero-copy">
+          <p class="status-pill"><span></span>시스템 준비 완료</p>
           <p class="eyebrow">Codex + Google Stitch + Full Screen Coverage</p>
           <h1>제품 의미, 전체 화면 커버리지, 디자인 감성을 분리해서 Stitch에 넘기는 실전 워크플로우</h1>
           <p class="lead">
@@ -34,8 +46,8 @@
             레퍼런스 이미지는 DESIGN.md/design system을 만드는 데만 사용한다.
           </p>
           <div class="hero-actions">
-            <a class="button primary" href="#prompts">프롬프트 바로 쓰기</a>
-            <a class="button secondary" href="README_DEPLOY_GITHUB_PAGES.md">GitHub Pages 배포 안내</a>
+            <a class="button primary" href="#prompts">Step 01부터 실행</a>
+            <a class="button secondary" href="source-md/07_ONE_PAGE_CHEATSHEET.md">치트시트 보기</a>
           </div>
         </div>
         <figure class="workflow-visual">
@@ -46,6 +58,24 @@
     </header>
 
     <main>
+      <section class="command-panel" aria-label="실행 상태">
+        <article>
+          <span class="metric-label">현재 진행률</span>
+          <strong>0%</strong>
+          <p>Step 01 대기 중. 실제 제품 프로젝트에서 Brief를 먼저 만든다.</p>
+        </article>
+        <article>
+          <span class="metric-label">커버리지 기준</span>
+          <strong>전체 화면</strong>
+          <p>대표 화면만 만들지 않고 탭, 라우트, 상태를 끝까지 추적한다.</p>
+        </article>
+        <article>
+          <span class="metric-label">핵심 산출물</span>
+          <strong>Stitch zip</strong>
+          <p>최종 코드가 아니라 Codex가 통합할 새 프론트엔드 재료다.</p>
+        </article>
+      </section>
+
       <section class="summary-band" aria-label="Core rule">
         <div>
           <strong>제일 중요한 규칙</strong>
